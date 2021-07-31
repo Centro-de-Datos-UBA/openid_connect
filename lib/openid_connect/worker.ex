@@ -7,7 +7,7 @@ defmodule OpenIDConnect.Worker do
   This worker will store and periodically update each provider's documents and JWKs according to the lifetimes
   """
 
-  @refresh_time 60 * 60 * 1000
+  @refresh_time 30 * 1000
 
   def start_link(provider_configs, name \\ :openid_connect) do
     GenServer.start_link(__MODULE__, provider_configs, name: name)
